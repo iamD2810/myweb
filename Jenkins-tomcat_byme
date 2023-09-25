@@ -20,7 +20,7 @@ pipeline{
 		}
 		stage('nexus artificat upload'){
 			steps {
-			nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb8.2.0 war', type: 'war']], credentialsId: 'f64b31f6-c6cc-4e3f-bdbb-4690309c303a', groupId: 'in.javahome', nexusUrl: '172.31.4.36:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-release ', version: '8.2.0'
+			nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.2.0.war', type: 'war']], credentialsId: 'f64b31f6-c6cc-4e3f-bdbb-4690309c303a', groupId: 'in.javahome', nexusUrl: '172.31.4.36:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'sample-release ', version: '8.2.0'
 			}
 		}
 		stage('Deploy in tomcat'){
